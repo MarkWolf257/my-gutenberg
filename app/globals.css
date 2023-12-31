@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&Montserrat:wght@400;700&family=Open+Sans&family=Josefin+Sans&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-background: rgb(255, 255, 255);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +16,61 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  body, header {
+    @apply dark:bg-gray-900 bg-white dark:text-white text-gray-900
+  }
+
+  hr {
+    @apply dark:border-white border-gray-900
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bolder;
+  font-family: 'Montserrat', 'sans-serif';
+  max-width: 50%;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: xxx-large;
+  font-weight: bold;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: x-large;
+}
+
+p, figcaption {
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 1.1em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid;
+  width: 80%;
+}
+
+section, footer {
+  height: fit-content;
+  display: flex;
+}
+
+.fig-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 18em;
+  min-width: 12em;
+}
+
+.fig-card figcaption {
+  max-width: 16em;
+  margin: 2em;
 }
