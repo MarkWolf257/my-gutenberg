@@ -28,7 +28,7 @@ export default function BookSlide(props) {
                 <div className="flex-1 inline-flex flex-col">
                     <h2>{books[activePage - 1].title}</h2>
                     <h3>{books[activePage - 1].authors.map(author => author.name).join('; ')}</h3>
-                    <p>{books[activePage - 1].subjects.map(subject => <span>{subject}<br /></span>)}</p>
+                    <p>{books[activePage - 1].subjects.map(subject => <span key={subject}>{subject}<br /></span>)}</p>
                 </div>
             </div>
 

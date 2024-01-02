@@ -3,6 +3,12 @@ import { FaBookOpen, FaFilePdf } from "react-icons/fa6";
 import SearchBar from "@/components/SearchBar";
 import BookSlide from "@/components/BookSlide";
 
+
+export const metadata = {
+    title: "My Gutenberg",
+    description: "Website for downloading and reading books from the gutenberg project.",
+}
+
 export default async function Home() {
     const url = new URL('https://gutendex.com/books');
     const res = await fetch(url);
